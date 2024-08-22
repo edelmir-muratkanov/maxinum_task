@@ -3,6 +3,30 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "classValidatorShim": true,
+          "controllerKeyOfComment": "description",
+          "controllerFileNameSuffix": ".controller.ts",
+          "dtoFileNameSuffix": [
+            ".dto.ts",
+            ".entity.ts",
+            ".request.ts",
+            ".response.ts"
+          ],
+          "dtoKeyOfComment": "description",
+          "introspectComments": true,
+          "typeFileNameSuffix": [
+            ".input.ts",
+            ".args.ts",
+            ".entity.ts",
+            ".model.ts"
+          ]
+        }
+      }
+    ]
   }
 }

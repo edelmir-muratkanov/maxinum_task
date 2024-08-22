@@ -31,7 +31,7 @@ export class UsersService {
     }
 
     /** Лучшим решением было бы вынести в отдельный сервис для пароля */
-    const salt = await genSalt(100)
+    const salt = await genSalt(10)
     const hashedPassword = await hash(password, salt)
 
     const user = this.userRepository.create({
